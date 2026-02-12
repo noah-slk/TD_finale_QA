@@ -52,4 +52,9 @@ export class NavigationBar {
     async clickAccountLink() {
         await this.accountLink.click();
     }
+
+    async testnav() {
+        await this.page.getByTestId('user-menu-button').click();
+        await this.page.getByTestId('account-link').click();
+}
 }

@@ -1,0 +1,13 @@
+import { test, expect } from "./fixture/fixture.ts";
+
+test.beforeEach(async ({ page }) => {
+    await page.goto('https://techhubecommerce.lovable.app/');
+});
+
+test('Login with valid credentials', async ({ loginPage }) => {
+await loginPage.LoginButtonBeforeBuying();
+await loginPage.fillLoginForm();
+await loginPage.submitLoginForm();
+await expect(loginPage.loginStatus).toBeVisible();
+
+});
